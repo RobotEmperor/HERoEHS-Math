@@ -9,6 +9,7 @@ project(heroehs_math)
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  robotis_math
 )
 
 find_package(Eigen3 REQUIRED)
@@ -43,6 +44,9 @@ include_directories(
 add_library(heroehs_math
    src/heroehs_pid_control.cpp
    src/heroehs_signal_processing.cpp
+   src/fifth_order_trajectory_generate.cpp
+   src/kinematics.cpp
+   src/end_point_to_rad_cal.cpp
 )
 
 add_dependencies(heroehs_math ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
