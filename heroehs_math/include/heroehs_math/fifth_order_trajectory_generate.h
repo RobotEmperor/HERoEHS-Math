@@ -20,44 +20,47 @@ namespace heroehs_math
 class FifthOrderTrajectory
 
 {
-public:
-	FifthOrderTrajectory();
-	~FifthOrderTrajectory();
+  public:
+    FifthOrderTrajectory();
+    ~FifthOrderTrajectory();
 
-	double fifth_order_traj_gen(double initial_value_, double final_value_,
-			double initial_velocity_, double final_velocity_ ,
-			double initial_acc, double final_acc,
-			double initial_time_, double final_time_);
-
-
-	bool   detect_change_final_value(double pose, double velocity_, double time_);
-	double fifth_order_traj_gen_one_value(Eigen::MatrixXd joint_);
-
-	bool is_moving_traj;
-
-	double a[6];
-	double d_t;
-	double trajectory_final_value;
+    double fifth_order_traj_gen(double initial_value_, double final_value_,
+        double initial_velocity_, double final_velocity_ ,
+        double initial_acc, double final_acc,
+        double initial_time_, double final_time_);
 
 
-	double initial_time;
-	double initial_pose;
-	double initial_velocity;
-	double initial_acc;
+    bool   detect_change_final_value(double pose, double velocity_, double time_);
+    double fifth_order_traj_gen_one_value(Eigen::MatrixXd joint_);
+
+    bool is_moving_traj;
+
+    double a[6];
+    double d_t;
+    double trajectory_final_value;
 
 
-	double current_time;
-	double current_pose;
-	double current_velocity;
-	double current_acc;
+    double initial_time;
+    double initial_pose;
+    double initial_velocity;
+    double initial_acc;
 
 
-	double final_time;
-	double final_pose;
-	double final_velocity;
-	double final_acc;
+    double current_time;
+    double current_pose;
+    double current_velocity;
+    double current_acc;
 
-	double temp_value;
+    double pre_current_pose;
+    double pre_current_velocity;
+
+
+    double final_time;
+    double final_pose;
+    double final_velocity;
+    double final_acc;
+
+    double temp_value;
 
 
 
