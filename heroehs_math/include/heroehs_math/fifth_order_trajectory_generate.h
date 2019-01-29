@@ -21,6 +21,7 @@ class FifthOrderTrajectory
 
 {
   public:
+    FifthOrderTrajectory(double control_time);
     FifthOrderTrajectory();
     ~FifthOrderTrajectory();
 
@@ -29,16 +30,10 @@ class FifthOrderTrajectory
         double initial_acc, double final_acc,
         double initial_time_, double final_time_);
 
-
     bool   detect_change_final_value(double pose, double velocity_, double time_);
     double fifth_order_traj_gen_one_value(Eigen::MatrixXd joint_);
 
     bool is_moving_traj;
-
-    double a[6];
-    double d_t;
-    double trajectory_final_value;
-
 
     double initial_time;
     double initial_pose;
@@ -51,24 +46,18 @@ class FifthOrderTrajectory
     double current_velocity;
     double current_acc;
 
-    double pre_current_pose;
-    double pre_current_velocity;
-
-
     double final_time;
     double final_pose;
     double final_velocity;
     double final_acc;
 
-    double temp_value;
+    double control_time_;
 
-
-
+    Eigen::MatrixXd position_coeff_;
+    Eigen::MatrixXd velocity_coeff_;
+    Eigen::MatrixXd acceleration_coeff_;
+    Eigen::MatrixXd time_variables_;
 };
-
-
-
-
 }
 
 #endif /* HEROEHS_MATH_FIFTH_ORDER_TRAJECTORY_GENERATE_H_ */
