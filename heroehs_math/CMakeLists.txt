@@ -47,6 +47,8 @@ add_library(heroehs_math
    src/fifth_order_trajectory_generate.cpp
    src/kinematics.cpp
    src/end_point_to_rad_cal.cpp
+
+   src/heroehs_pid_controller_2.cpp
 )
 
 add_dependencies(heroehs_math ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
