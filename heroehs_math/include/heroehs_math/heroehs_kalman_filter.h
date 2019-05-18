@@ -46,7 +46,7 @@ public:
   double time();
 
 private:
-  Eigen::MatrixXd F, B, H, Q, R, K, P, P0;
+  Eigen::MatrixXd F, B, H, Q, R, K, P;
 
 
   int m, n;

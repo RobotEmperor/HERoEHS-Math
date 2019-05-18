@@ -48,7 +48,6 @@ KalmanFilter::~KalmanFilter()
 void KalmanFilter::init(const Eigen::VectorXd& x0,double t0)
 {
   x_hat = x0;
-  P = P0;
   this->t0 = t0;
   t = t0;
   initialized = true;
@@ -57,7 +56,6 @@ void KalmanFilter::init(const Eigen::VectorXd& x0,double t0)
 void KalmanFilter::init()
 {
   x_hat.setZero();
-  P = P0;
   t0 = 0;
   t = t0;
   initialized = true;
